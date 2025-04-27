@@ -1,10 +1,10 @@
 package net.craftcitizen.imagemaps;
 
-import de.craftlancer.core.command.SubCommand;
+import net.craftcitizen.imagemaps.clcore.command.SubCommand;
 
 public abstract class ImageMapSubCommand extends SubCommand {
 
-    public ImageMapSubCommand(String permission, ImageMaps plugin, boolean console) {
+    public ImageMapSubCommand(final String permission, final ImageMaps plugin, final boolean console) {
         super(permission, plugin, console);
     }
 

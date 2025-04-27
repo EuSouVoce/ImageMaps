@@ -23,8 +23,8 @@ public class ImagePlaceEvent extends Event implements Cancellable {
 
     private boolean cancelled;
 
-    public ImagePlaceEvent(Player player, Block block, BlockFace widthDirection, BlockFace heightDirection, int width,
-                           int height, PlacementData cache) {
+    public ImagePlaceEvent(final Player player, final Block block, final BlockFace widthDirection, final BlockFace heightDirection, final int width,
+            final int height, final PlacementData cache) {
         this.player = player;
         this.block = block;
         this.widthDirection = widthDirection;
@@ -40,7 +40,7 @@ public class ImagePlaceEvent extends Event implements Cancellable {
      * @return the player attempting to place the image
      */
     public Player getPlayer() {
-        return player;
+        return this.player;
     }
 
     /**
@@ -49,7 +49,7 @@ public class ImagePlaceEvent extends Event implements Cancellable {
      * @return the initial block the image is placed against
      */
     public Block getBlock() {
-        return block;
+        return this.block;
     }
 
     /**
@@ -58,7 +58,7 @@ public class ImagePlaceEvent extends Event implements Cancellable {
      * @return the height direction of the map placement
      */
     public BlockFace getHeightDirection() {
-        return heightDirection;
+        return this.heightDirection;
     }
 
     /**
@@ -67,7 +67,7 @@ public class ImagePlaceEvent extends Event implements Cancellable {
      * @return the width direction of the map placement
      */
     public BlockFace getWidthDirection() {
-        return widthDirection;
+        return this.widthDirection;
     }
 
     /**
@@ -76,7 +76,7 @@ public class ImagePlaceEvent extends Event implements Cancellable {
      * @return the width of the image in maps
      */
     public int getWidth() {
-        return width;
+        return this.width;
     }
 
     /**
@@ -85,7 +85,7 @@ public class ImagePlaceEvent extends Event implements Cancellable {
      * @return the height of the image in maps
      */
     public int getHeight() {
-        return height;
+        return this.height;
     }
 
     /**
@@ -94,25 +94,25 @@ public class ImagePlaceEvent extends Event implements Cancellable {
      * @return the placement data
      */
     public PlacementData getCacheEntry() {
-        return cache;
+        return this.cache;
     }
 
     @Override
     public boolean isCancelled() {
-        return cancelled;
+        return this.cancelled;
     }
 
     @Override
-    public void setCancelled(boolean cancel) {
+    public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
     @Override
     public HandlerList getHandlers() {
-        return getHandlerList();
+        return ImagePlaceEvent.getHandlerList();
     }
 
     public static HandlerList getHandlerList() {
-        return handlers;
+        return ImagePlaceEvent.handlers;
     }
 }

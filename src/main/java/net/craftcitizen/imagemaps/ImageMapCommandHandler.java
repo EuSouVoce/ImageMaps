@@ -1,18 +1,18 @@
 package net.craftcitizen.imagemaps;
 
-import de.craftlancer.core.command.CommandHandler;
+import net.craftcitizen.imagemaps.clcore.command.CommandHandler;
 
 public class ImageMapCommandHandler extends CommandHandler {
-    public ImageMapCommandHandler(ImageMaps plugin) {
+    public ImageMapCommandHandler(final ImageMaps plugin) {
         super(plugin);
-        registerSubCommand("download", new ImageMapDownloadCommand(plugin));
-        registerSubCommand("delete", new ImageMapDeleteCommand(plugin));
-        registerSubCommand("place", new ImageMapPlaceCommand(plugin));
-        registerSubCommand("info", new ImageMapInfoCommand(plugin));
-        registerSubCommand("list", new ImageMapListCommand(plugin));
-        registerSubCommand("reload", new ImageMapReloadCommand(plugin));
-        registerSubCommand("cleanup", new ImageMapCleanupCommand(plugin));
-        registerSubCommand("debuginfo", new ImageMapDebugInfoCommand(plugin));
-        registerSubCommand("help", new ImageMapHelpCommand(plugin, getCommands()), "?");
+        this.registerSubCommand("download", new ImageMapDownloadCommand(plugin));
+        this.registerSubCommand("delete", new ImageMapDeleteCommand(plugin));
+        this.registerSubCommand("place", new ImageMapPlaceCommand(plugin));
+        this.registerSubCommand("info", new ImageMapInfoCommand(plugin));
+        this.registerSubCommand("list", new ImageMapListCommand(plugin));
+        this.registerSubCommand("reload", new ImageMapReloadCommand(plugin));
+        this.registerSubCommand("cleanup", new ImageMapCleanupCommand(plugin));
+        this.registerSubCommand("debuginfo", new ImageMapDebugInfoCommand(plugin));
+        this.registerSubCommand("help", new ImageMapHelpCommand(plugin, this.getCommands()), "?");
     }
 }

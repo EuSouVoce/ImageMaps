@@ -1,6 +1,6 @@
 package net.craftcitizen.imagemaps;
 
-import de.craftlancer.core.util.Tuple;
+import net.craftcitizen.imagemaps.clcore.util.Tuple;
 
 /**
  * Data associated with placing an image.
@@ -13,8 +13,9 @@ public class PlacementData {
     private final boolean isGlowing;
     private final Tuple<Integer, Integer> scale;
 
-    public PlacementData(String filename, boolean isInvisible, boolean isFixed, boolean isGlowing,
-                         Tuple<Integer, Integer> scale) {
+    public PlacementData(final String filename, final boolean isInvisible, final boolean isFixed,
+            final boolean isGlowing,
+            final Tuple<Integer, Integer> scale) {
         this.filename = filename;
         this.isInvisible = isInvisible;
         this.isFixed = isFixed;
@@ -28,11 +29,12 @@ public class PlacementData {
      * @return the file name of the image
      */
     public String getFilename() {
-        return filename;
+        return this.filename;
     }
 
     /**
-     * Whether the placed item frame will have the "fixed" property set. A fixed frame can't be destroyed or modified by
+     * Whether the placed item frame will have the "fixed" property set. A fixed
+     * frame can't be destroyed or modified by
      * survival players.
      * <p>
      * Only supported in 1.16 or higher!
@@ -40,11 +42,12 @@ public class PlacementData {
      * @return whether the placed frames will be fixed or not
      */
     public boolean isFixed() {
-        return isFixed;
+        return this.isFixed;
     }
 
     /**
-     * Whether the placed item frame will have the "invisible" property set. An invisible frame won't be rendered,
+     * Whether the placed item frame will have the "invisible" property set. An
+     * invisible frame won't be rendered,
      * leaving only the item/map visible.
      * <p>
      * Only supported in 1.16 or higher!
@@ -52,7 +55,7 @@ public class PlacementData {
      * @return whether the placed frames will be invisible or not
      */
     public boolean isInvisible() {
-        return isInvisible;
+        return this.isInvisible;
     }
 
     /**
@@ -63,11 +66,12 @@ public class PlacementData {
      * @return whether the placed frames will be a glowing one
      */
     public boolean isGlowing() {
-        return isGlowing;
+        return this.isGlowing;
     }
 
     /**
-     * The <b>requested</b> size of the image. The actual size might be smaller since the plugin won't modify aspect
+     * The <b>requested</b> size of the image. The actual size might be smaller
+     * since the plugin won't modify aspect
      * ratios.
      * <p>
      * Values of -1 stand for the default value of an unscaled map.
@@ -75,6 +79,6 @@ public class PlacementData {
      * @return the requested size of the image
      */
     public Tuple<Integer, Integer> getSize() {
-        return scale;
+        return this.scale;
     }
 }
